@@ -12,6 +12,9 @@ class AuthorForm(forms.ModelForm):
     class Meta:
         model = Author
         fields = ["fullname", "born_date", "born_location", "description"]
+        widgets = {
+            'born_date': forms.DateInput(attrs={'type': 'date'}),
+        }
 
 
 class QuoteForm(forms.ModelForm):
